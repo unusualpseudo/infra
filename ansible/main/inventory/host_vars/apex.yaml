@@ -7,3 +7,6 @@ datasets:
   - name: "oasis/Media/TvShows"
   - name: "oasis/Media/Music"
   - name: "oasis/Media/YouTube"
+  - name: "oasis/Download"
+  - name: "oasis/Download/Torrents"
+  - name: "oasis/Download/Usenet"

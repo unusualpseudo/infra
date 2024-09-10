@@ -1,9 +1,5 @@
 ./.idea
-
 kubeconfig
-
 .envrc
-
 .env
-
 keys.age
