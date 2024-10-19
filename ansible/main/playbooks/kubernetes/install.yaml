@@ -49,9 +49,6 @@
         - kind: HelmChart
           name: coredns
           namespace: kube-system
-        - kind: DaemonSet
-          name: kube-vip
-          namespace: kube-system
       register: resource_check
       when:
         - k3s_server_manifests_templates | length > 0

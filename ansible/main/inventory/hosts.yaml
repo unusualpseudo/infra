@@ -1,22 +1,21 @@
-kubernetes:
+all:
   vars:
     ansible_user: "{{ lookup('env', 'ANSIBLE_USER') }}"
   children:
-    master:
-        hosts:
-          quasar:
-            ansible_host: 192.168.1.102
-    worker:
-      hosts:
-        titan:
-          ansible_host: 192.168.1.101
-        rift:
-          ansible_host: 192.168.1.102
+    kubernetes:
+      children:
+        controller:
+          hosts:
+            rift:
+              ansible_host: 192.168.1.6
+        worker:
+          hosts:
+            quasar:
+              ansible_host: 192.168.1.8
     dnsserver:
       hosts:
-        apex:
-          ansible_host: 192.168.1.100
+        horizon:
+          ansible_host: 192.168.1.57
     storage:
       hosts:
-        titan:
         rift:

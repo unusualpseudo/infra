@@ -12,18 +12,5 @@
     group: root
     mode: '0644'
 
-- name: Disable systemd-resolved at boot
-  systemd:
-    name: systemd-resolved
-    enabled: no
-    state: stopped
-
 - name: Reload systemd daemon
   command: systemctl daemon-reload
-
-- name: Reboot OS
-  reboot:
-    msg: "Rebooting machine 5 seconds..., play will resume afterwards"
-    pre_reboot_delay: 5
-    post_reboot_delay: 30
-    reboot_timeout: 300

@@ -29,14 +29,3 @@
           net.bridge.bridge-nf-call-iptables: 1
           net.bridge.bridge-nf-call-ip6tables: 1
 
-    - name: Disable systemd-resolved service
-      when: inventory_hostname in groups['dnsserver']
-      ansible.builtin.systemd:
-        name: systemd-resolved
-        enabled: no
-
-    - name: Stop systemd-resolved service
-      when: inventory_hostname in groups['dnsserver']
-      ansible.builtin.systemd:
-        name: systemd-resolved
-        state: stopped

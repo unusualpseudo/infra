@@ -27,8 +27,6 @@ k3s_server:
   tls-san:
     - "{{ k3s_registration_address }}" # kube-vip
 
-  node-taint:
-  - "node-role.kubernetes.io/control-plane:NoSchedule"
   kubelet-arg:
     - "image-gc-high-threshold=64"
     - "image-gc-low-threshold=55"

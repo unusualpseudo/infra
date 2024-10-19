@@ -17,19 +17,6 @@
     update_cache: true
     force_apt_get: yes
 
-- name: System Packages | Remove packages
-  block:
-    - name: System Packages | Remove packages
-      ansible.builtin.apt:
-        name: "{{ apt_remove_packages }}"
-        state: absent
-        autoremove: true
-        autoclean: true
-  when:
-    - apt_remove_packages is defined
-    - apt_remove_packages is iterable
-    - apt_remove_packages | length > 0
-
 - name: Remove dependencies that are no longer required and purge their configuration files
   ansible.builtin.apt:
     autoremove: yes
