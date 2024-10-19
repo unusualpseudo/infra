@@ -1,8 +1,14 @@
 ---
+disk_device_id: "usb-Micron_CT1000X9PROSSD9_2409E8C145DD-0:0"
+pool_name: oasis
+datasets:
+  - name: "oasis/Data"
+  - name: "oasis/Media"
+  - name: "oasis/Apps"
+
 nodes_cidr: "192.168.1.0/24"
 uid: 442
 gid: 442
-
 nfs_options: "no_subtree_check,all_squash,anonuid={{uid}},anongid={{gid}},rw=@{{nodes_cidr}}"
 
 storage_required_packages_list:
